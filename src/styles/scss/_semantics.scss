@@ -1,0 +1,146 @@
+@use 'primitives' as *;
+
+// Background colors
+$color-background-accent-red-subtlest: $color-red-100;
+$color-background-accent-red-subtlest-hovered: $color-red-200;
+$color-background-accent-red-subtlest-pressed: $color-red-300;
+
+$color-background-accent-red-subtler: $color-red-300;
+$color-background-accent-red-subtler-hovered: $color-red-400;
+$color-background-accent-red-subtler-pressed: $color-red-500;
+
+$color-background-accent-red-subtle: $color-red-500;
+$color-background-accent-red-subtle-hovered: $color-red-400;
+$color-background-accent-red-subtle-pressed: $color-red-300;
+
+$color-background-accent-red-bolder: $color-red-700;
+$color-background-accent-red-bolder-hovered: $color-red-800;
+$color-background-accent-red-bolder-pressed: $color-red-900;
+
+$color-background-accent-orange-subtlest: $color-orange-100;
+$color-background-accent-orange-subtlest-hovered: $color-orange-200;
+$color-background-accent-orange-subtlest-pressed: $color-orange-300;
+
+$color-background-accent-orange-subtler: $color-orange-300;
+$color-background-accent-orange-subtler-hovered: $color-orange-400;
+$color-background-accent-orange-subtler-pressed: $color-orange-500;
+
+$color-background-accent-orange-subtle: $color-orange-500;
+$color-background-accent-orange-subtle-hovered: $color-orange-400;
+$color-background-accent-orange-subtle-pressed: $color-orange-300;
+
+$color-background-accent-orange-bolder: $color-orange-700;
+$color-background-accent-orange-bolder-hovered: $color-orange-800;
+$color-background-accent-orange-bolder-pressed: $color-orange-900;
+
+$color-background-accent-yellow-subtlest: $color-yellow-100;
+$color-background-accent-yellow-subtlest-hovered: $color-yellow-200;
+$color-background-accent-yellow-subtlest-pressed: $color-yellow-300;
+
+$color-background-accent-yellow-subtler: $color-yellow-300;
+$color-background-accent-yellow-subtler-hovered: $color-yellow-400;
+$color-background-accent-yellow-subtler-pressed: $color-yellow-500;
+
+$color-background-accent-yellow-subtle: $color-yellow-500;
+$color-background-accent-yellow-subtle-hovered: $color-yellow-400;
+$color-background-accent-yellow-subtle-pressed: $color-yellow-300;
+
+$color-background-accent-yellow-bolder: $color-yellow-700;
+$color-background-accent-yellow-bolder-hovered: $color-yellow-800;
+$color-background-accent-yellow-bolder-pressed: $color-yellow-900;
+
+$color-background-accent-green-subtlest: $color-green-100;
+$color-background-accent-green-subtlest-hovered: $color-green-200;
+$color-background-accent-green-subtlest-pressed: $color-green-300;
+
+$color-background-accent-green-subtler: $color-green-300;
+$color-background-accent-green-subtler-hovered: $color-green-400;
+$color-background-accent-green-subtler-pressed: $color-green-500;
+
+$color-background-accent-green-subtle: $color-green-500;
+$color-background-accent-green-subtle-hovered: $color-green-400;
+$color-background-accent-green-subtle-pressed: $color-green-300;
+
+$color-background-accent-green-bolder: $color-green-700;
+$color-background-accent-green-bolder-hovered: $color-green-800;
+$color-background-accent-green-bolder-pressed: $color-green-900;
+
+$color-background-accent-blue-subtlest: $color-blue-100;
+$color-background-accent-blue-subtlest-hovered: $color-blue-200;
+$color-background-accent-blue-subtlest-pressed: $color-blue-300;
+
+$color-background-accent-blue-subtler: $color-blue-300;
+$color-background-accent-blue-subtler-hovered: $color-blue-400;
+$color-background-accent-blue-subtler-pressed: $color-blue-500;
+
+$color-background-accent-blue-subtle: $color-blue-500;
+$color-background-accent-blue-subtle-hovered: $color-blue-400;
+$color-background-accent-blue-subtle-pressed: $color-blue-300;
+
+$color-background-accent-blue-bolder: $color-blue-700;
+$color-background-accent-blue-bolder-hovered: $color-blue-800;
+$color-background-accent-blue-bolder-pressed: $color-blue-900;
+
+$color-background-accent-purple-subtlest: $color-purple-100;
+$color-background-accent-purple-subtlest-hovered: $color-purple-200;
+$color-background-accent-purple-subtlest-pressed: $color-purple-300;
+
+$color-background-accent-purple-subtler: $color-purple-300;
+$color-background-accent-purple-subtler-hovered: $color-purple-400;
+$color-background-accent-purple-subtler-pressed: $color-purple-500;
+
+$color-background-accent-purple-subtle: $color-purple-500;
+$color-background-accent-purple-subtle-hovered: $color-purple-400;
+$color-background-accent-purple-subtle-pressed: $color-purple-300;
+
+$color-background-accent-purple-bolder: $color-purple-700;
+$color-background-accent-purple-bolder-hovered: $color-purple-800;
+$color-background-accent-purple-bolder-pressed: $color-purple-900;
+
+$color-background-accent-gray-subtlest: $color-gray-100;
+$color-background-accent-gray-subtlest-hovered: $color-gray-200;
+$color-background-accent-gray-subtlest-pressed: $color-gray-300;
+
+$color-background-accent-gray-subtler: $color-gray-300;
+$color-background-accent-gray-subtler-hovered: $color-gray-400;
+$color-background-accent-gray-subtler-pressed: $color-gray-500;
+
+$color-background-accent-gray-subtle: $color-gray-500;
+$color-background-accent-gray-subtle-hovered: $color-gray-400;
+$color-background-accent-gray-subtle-pressed: $color-gray-300;
+
+$color-background-accent-gray-bolder: $color-gray-700;
+$color-background-accent-gray-bolder-hovered: $color-gray-800;
+$color-background-accent-gray-bolder-pressed: $color-gray-900;
+
+$color-background-accent-black: $color-gray-1000;
+
+// Text colors
+$color-text-accent-yellow: $color-yellow-500;
+$color-text-accent-gray: $color-gray-500;
+$color-text-white: $color-gray-100;
+$color-text-black: $color-gray-1000;
+
+// Font-size
+
+// Heading font sizes
+$fs-heading-lg: $font-size-36;
+$fs-heading-md: $font-size-30;
+$fs-heading-sm: $font-size-24;
+$fs-heading-xs: $font-size-20;
+$fs-heading-xxs: $font-size-18;
+$fs-heading-xxxs: $font-size-16;
+$fs-heading-xxxxs: $font-size-14;
+
+// Body font sizes
+$fs-body-lg: $font-size-16;
+$fs-body-md: $font-size-14;
+$fs-body-sm: $font-size-12;
+
+// Caption font size
+$fs-caption-lg: $font-size-72;
+$fs-caption-md: $font-size-36;
+$fs-caption-sm: $font-size-24;
+
+//Font-family
+$font-body: $font-primary;

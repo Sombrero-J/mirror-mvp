@@ -1,0 +1,31 @@
+@use 'primitives' as *;
+@use 'semantics' as *;
+
+// Form
+$ff-form-heading: $font-secondary;
+$ff-form-body: $font-body;
+$fs-form-heading-small: $fs-caption-sm;
+$fs-form-heading-medium: $fs-caption-md;
+$fs-form-heading-large: $fs-caption-lg;
+
+$color-form-heading-highlight: $color-text-accent-yellow;
+$color-form-support: $color-text-accent-gray;
+$color-form-imagebox-yellow: $color-text-accent-yellow;
+
+$color-form-imagebox-border-yellow: $color-background-accent-yellow-bolder;
+
+$color-form-imagebox-background-yellow: $color-background-accent-yellow-subtlest;
+
+// Button
+$ff-button: $font-primary;
+$fs-button-large: $fs-body-lg;
+$fs-button-small: $fs-body-md;
+
+$color-button-text-primary-idle: $color-text-white;
+$color-button-text-primary-hovered: $color-text-black;
+
+$color-button-text-secondary-idle: $color-text-black;
+$color-button-text-secondary-hovered: $color-text-black;
+
+$color-button-primary-idle: $color-background-accent-black;
+$color-button-secondary-idle: $color-background-accent-black;

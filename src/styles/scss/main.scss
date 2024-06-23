@@ -1,4 +1,6 @@
-@use 'primitives';
-@use 'tokens';
+@forward 'tokens';
+@forward 'semantics';
 
-$color-primary: green;
+$small-screen: 480px;
+$medium-screen: 768px;
+$large-screen: 1024px;
