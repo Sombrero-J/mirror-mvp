@@ -1,18 +1,36 @@
 <script lang="ts">
   export let colour = "yellow";
   export let placeholder = "Default Placeholder";
+  export let imageUrl = "";
+
+  function handleFileChange(event: any) {
+    imageUrl = URL.createObjectURL(event.target.files[0]);
+  }
 </script>
 
 <div class="upload-container">
   <label for="imageUpload" class="caption">
-    <h1>Upload A <span class="highlight">Full Body</span> Image</h1>
-    <span class="support"
-      >It works best if the shape of your body is visible</span
-    >
+    <slot name="label">Insert Label Here</slot>
+    <span class="support">
+      It works best if the shape of your body is visible
+    </span>
   </label>
-  <div class={`upload-box ${colour}`}>
-    <input type="file" id="imageUpload" class="image-input" accept="image/*" />
-    <p class="placeholder">{placeholder}</p>
+  <div class="box-button">
+    <div class={`upload-box ${colour}`}>
+      {#if imageUrl}
+        <img src={imageUrl} alt="A Full Body" class="uploaded-img" />
+      {:else}
+        <input
+          type="file"
+          id="imageUpload"
+          class="image-input"
+          accept="image/*"
+          on:change={handleFileChange}
+        />
+        <p class="placeholder">{placeholder}</p>
+      {/if}
+    </div>
+    <slot name="button"></slot>
   </div>
 </div>
 
@@ -21,19 +39,24 @@
   $small-gap: 1.5rem;
   $lg-gap: 5rem;
 
-  .caption {
-    outline: 1px solid red;
-    max-width: 25rem;
+  .uploaded-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
-  h1 {
+  // .caption {
+  //   max-width: 25rem;
+  // }
+
+  .caption {
+    max-width: 25rem;
     font-family: $ff-form-heading;
     font-size: $fs-form-heading-small;
   }
 
-  .highlight {
-    color: $color-form-heading-highlight;
-  }
+  
+  
 
   .support {
     color: $color-form-support;
@@ -41,10 +64,9 @@
   }
 
   .upload-container {
-    outline: 1px solid green;
     font-family: $ff-form-body;
-    min-width: calc(100% - 4rem);
-    padding: 0 2rem; 
+    max-width: calc(100% - 8rem);
+    // padding: 0 2rem;
     // height: 100svh;
     display: flex;
     flex-direction: column;
@@ -55,45 +77,73 @@
 
   .upload-box {
     position: relative;
+    text-align: center;
+    padding: 0 2rem;
 
     display: flex;
     height: 23rem;
-    min-width: 20rem;
+    min-width: 10rem;
     max-width: 40rem;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1rem;
 
     border-radius: $border-radius;
+  }
+
+  .upload-box.yellow {
+    color: $color-form-imagebox-yellow;
+
     border: 3px solid $color-form-imagebox-border-yellow;
     background: $color-form-imagebox-background-yellow;
+  }
+
+  .upload-box.orange {
+    color: $color-form-imagebox-orange;
+    border: 3px solid $color-form-imagebox-border-orange;
+    background: $color-form-imagebox-background-orange;
   }
 
   .image-input {
     height: 100%;
     width: 100%;
     opacity: 0;
-    position: absolute;
+    cursor: pointer;
   }
 
   .placeholder {
-    color: $color-form-imagebox-yellow;
     font-size: $fs-heading-xxs;
     font-weight: 500;
+    position: absolute;
   }
 
+  @media (min-width: $medium-screen) {
+    .upload-container {
+      flex-direction: row;
+      gap: $lg-gap;
+    }
+
+    .caption {
+      font-size: $fs-form-heading-medium;
+    }
+
+    .placeholder {
+      font-size: $fs-heading-sm;
+    }
+  }
   @media (min-width: $large-screen) {
     .upload-container {
       flex-direction: row;
       gap: $lg-gap;
     }
 
-    h1 {
+    .caption {
       font-size: $fs-form-heading-large;
     }
 
     .upload-box {
       height: 40rem;
-      min-width: 35%;
+      min-width: 30rem;
     }
 
     .support {
@@ -102,20 +152,6 @@
 
     .placeholder {
       font-size: $fs-heading-md;
-    }
-  }
-  @media (min-width: $medium-screen) {
-    .upload-container {
-      flex-direction: row;
-      gap: $lg-gap;
-    }
-
-    h1 {
-      font-size: $fs-form-heading-medium;
-    }
-
-    .placeholder {
-      font-size: $fs-heading-sm;
     }
   }
 </style>

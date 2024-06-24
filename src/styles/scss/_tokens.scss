@@ -1,20 +1,29 @@
 @use 'primitives' as *;
 @use 'semantics' as *;
 
-// Form
+// Form Yellow
 $ff-form-heading: $font-secondary;
 $ff-form-body: $font-body;
+
 $fs-form-heading-small: $fs-caption-sm;
 $fs-form-heading-medium: $fs-caption-md;
 $fs-form-heading-large: $fs-caption-lg;
 
-$color-form-heading-highlight: $color-text-accent-yellow;
+$color-form-heading-highlight-yellow: $color-text-accent-yellow;
+$color-form-heading-highlight-orange: $color-text-accent-orange;
 $color-form-support: $color-text-accent-gray;
 $color-form-imagebox-yellow: $color-text-accent-yellow;
 
 $color-form-imagebox-border-yellow: $color-background-accent-yellow-bolder;
 
 $color-form-imagebox-background-yellow: $color-background-accent-yellow-subtlest;
+
+//Form Orange
+$color-form-imagebox-orange: $color-text-accent-orange;
+
+$color-form-imagebox-border-orange: $color-background-accent-orange-bolder;
+
+$color-form-imagebox-background-orange: $color-background-accent-orange-subtlest;
 
 // Button
 $ff-button: $font-primary;

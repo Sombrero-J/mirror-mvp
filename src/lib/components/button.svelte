@@ -47,6 +47,7 @@
     color: $color-button-text-primary-hovered;
     background: none;
     box-shadow: 0px 0px 0px 1px $color-button-text-primary-hovered inset;
+    transition: background 0.3s ease-out;
   }
 
   .secondary {
@@ -64,7 +65,7 @@
     width: 0;
     height: 1px;
     background: black;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-out;
   }
 
   .secondary:hover::after {
