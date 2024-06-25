@@ -25,6 +25,9 @@ $color-form-imagebox-border-orange: $color-background-accent-orange-bolder;
 
 $color-form-imagebox-background-orange: $color-background-accent-orange-subtlest;
 
+//Form Gray
+$color-form-imagebox-gray: $color-text-accent-gray;
+
 // Button
 $ff-button: $font-primary;
 $fs-button-large: $fs-body-lg;
@@ -32,9 +35,15 @@ $fs-button-small: $fs-body-md;
 
 $color-button-text-primary-idle: $color-text-white;
 $color-button-text-primary-hovered: $color-text-black;
+$color-button-text-primary-disabled: $color-background-accent-gray-subtler;
 
 $color-button-text-secondary-idle: $color-text-black;
 $color-button-text-secondary-hovered: $color-text-black;
+$color-button-text-secondary-disabled: $color-background-accent-gray-subtler;
 
 $color-button-primary-idle: $color-background-accent-black;
 $color-button-secondary-idle: $color-background-accent-black;
+
+$color-button-primary-disabled: $color-background-accent-gray-subtlest;
+$color-button-secondary-disabled: $color-background-accent-gray-subtlest;
+

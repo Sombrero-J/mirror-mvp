@@ -38,12 +38,12 @@
     padding: 0.25em 0.5em;
   }
 
-  .primary {
+  .primary:not(:disabled) {
     color: $color-button-text-primary-idle;
     background: $color-button-primary-idle;
   }
 
-  .primary:hover {
+  .primary:not(:disabled):hover {
     color: $color-button-text-primary-hovered;
     background: none;
     box-shadow: 0px 0px 0px 1px $color-button-text-primary-hovered inset;
@@ -55,7 +55,7 @@
     background: none;
   }
 
-  .secondary:hover {
+  .secondary:not(:disabled):hover {
     color: $color-button-text-secondary-hovered;
   }
 
@@ -70,5 +70,18 @@
 
   .secondary:hover::after {
     width: 100%;
+  }
+
+  .primary:disabled {
+    // background: $color-button-primary-disabled;
+    background: $color-background-accent-gray-subtlest;
+    color: $color-button-text-primary-disabled;
+    cursor: not-allowed;
+  }
+
+  .secondary:disabled {
+    background: $color-button-secondary-disabled;
+    color: $color-button-text-secondary-disabled;
+    cursor: not-allowed;
   }
 </style>

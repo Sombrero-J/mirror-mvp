@@ -1,34 +1,21 @@
 <script lang="ts">
-  export let colour = "yellow";
-  export let placeholder = "Default Placeholder";
-  export let support = "Default Support Text";
   export let imageUrl = "";
-
-  function handleFileChange(event: any) {
-    imageUrl = URL.createObjectURL(event.target.files[0]);
-  }
+  export let support = "Default Support Text";
 </script>
 
-<div class="upload-container">
-  <label for="imageUpload" class="caption">
+<div class="gen-container">
+  <div class="caption">
     <slot name="label">Insert Label Here</slot>
     <span class="support">
       {support}
     </span>
-  </label>
+  </div>
   <div class="box-button">
-    <div class={`upload-box ${colour}`}>
+    <div class="gen-box">
       {#if imageUrl}
-        <img src={imageUrl} alt="A Full Body" class="uploaded-img" />
+        <img src={imageUrl} alt="Virtual Try On" class="uploaded-img" />
       {:else}
-        <input
-          type="file"
-          id="imageUpload"
-          class="image-input"
-          accept="image/*"
-          on:change={handleFileChange}
-        />
-        <p class="placeholder">{placeholder}</p>
+        <p class="placeholder">"Generating..."</p>
       {/if}
     </div>
     <slot name="button"></slot>
@@ -46,25 +33,19 @@
     object-fit: cover;
   }
 
-  // .caption {
-  //   max-width: 25rem;
-  // }
-
   .caption {
     max-width: 25rem;
     font-family: $ff-form-heading;
     font-size: $fs-form-heading-small;
+    line-height: normal;
   }
-
-  
-  
 
   .support {
     color: $color-form-support;
     font-size: $fs-heading-xxxxs;
   }
 
-  .upload-container {
+  .gen-container {
     font-family: $ff-form-body;
     max-width: calc(100% - 8rem);
     // padding: 0 2rem;
@@ -76,7 +57,7 @@
     gap: $small-gap;
   }
 
-  .upload-box {
+  .gen-box {
     position: relative;
     text-align: center;
     padding: 0 2rem;
@@ -92,34 +73,15 @@
     border-radius: $border-radius;
   }
 
-  .upload-box.yellow {
-    color: $color-form-imagebox-yellow;
-
-    border: 3px solid $color-form-imagebox-border-yellow;
-    background: $color-form-imagebox-background-yellow;
-  }
-
-  .upload-box.orange {
-    color: $color-form-imagebox-orange;
-    border: 3px solid $color-form-imagebox-border-orange;
-    background: $color-form-imagebox-background-orange;
-  }
-
-  .image-input {
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    cursor: pointer;
-  }
-
   .placeholder {
+    color: $color-form-imagebox-gray;
     font-size: $fs-heading-xxs;
-    font-weight: 500;
+    font-weight: 300;
     position: absolute;
   }
 
   @media (min-width: $medium-screen) {
-    .upload-container {
+    .gen-container {
       flex-direction: row;
       gap: $lg-gap;
     }
@@ -133,7 +95,7 @@
     }
   }
   @media (min-width: $large-screen) {
-    .upload-container {
+    .gen-container {
       flex-direction: row;
       gap: $lg-gap;
     }
@@ -142,7 +104,7 @@
       font-size: $fs-form-heading-large;
     }
 
-    .upload-box {
+    .gen-box {
       height: 40rem;
       min-width: 30rem;
     }

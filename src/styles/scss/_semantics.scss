@@ -97,9 +97,9 @@ $color-background-accent-purple-bolder: $color-purple-700;
 $color-background-accent-purple-bolder-hovered: $color-purple-800;
 $color-background-accent-purple-bolder-pressed: $color-purple-900;
 
-$color-background-accent-gray-subtlest: $color-gray-100;
-$color-background-accent-gray-subtlest-hovered: $color-gray-200;
-$color-background-accent-gray-subtlest-pressed: $color-gray-300;
+$color-background-accent-gray-subtlest: $color-gray-200;
+$color-background-accent-gray-subtlest-hovered: $color-gray-300;
+$color-background-accent-gray-subtlest-pressed: $color-gray-400;
 
 $color-background-accent-gray-subtler: $color-gray-300;
 $color-background-accent-gray-subtler-hovered: $color-gray-400;
@@ -114,6 +114,9 @@ $color-background-accent-gray-bolder-hovered: $color-gray-800;
 $color-background-accent-gray-bolder-pressed: $color-gray-900;
 
 $color-background-accent-black: $color-gray-1000;
+
+//Page Background
+$color-background-white: $color-gray-100;
 
 // Text colors
 $color-text-accent-yellow: $color-yellow-500;
