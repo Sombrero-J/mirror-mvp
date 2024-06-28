@@ -2,10 +2,14 @@
   export let colour = "yellow";
   export let placeholder = "Default Placeholder";
   export let support = "Default Support Text";
+  export let name = "";
   export let imageUrl = "";
+  export let imageName = "";
+  export let required = false;
 
   function handleFileChange(event: any) {
     imageUrl = URL.createObjectURL(event.target.files[0]);
+    imageName = event.target.files[0].name;
   }
 </script>
 
@@ -22,10 +26,12 @@
         <img src={imageUrl} alt="A Full Body" class="uploaded-img" />
       {:else}
         <input
+          {name}
           type="file"
           id="imageUpload"
           class="image-input"
           accept="image/*"
+          {required}
           on:change={handleFileChange}
         />
         <p class="placeholder">{placeholder}</p>
@@ -55,9 +61,6 @@
     font-family: $ff-form-heading;
     font-size: $fs-form-heading-small;
   }
-
-  
-  
 
   .support {
     color: $color-form-support;
