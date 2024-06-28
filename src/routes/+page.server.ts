@@ -202,13 +202,16 @@ async function submitTask() {
 
 async function getTryOnResult() {
   const tryOnResult = async () => {
+    const payload = {
+      task_uuid: task_uuid,
+    };
     const response = await fetch(`https://heybeauty.ai/api/get-task-info`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${BEAUTY_API}`,
       },
-      body: JSON.stringify(task_uuid),
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
@@ -238,18 +241,23 @@ async function getTryOnResult() {
 
   const result = await tryOnResult();
   let currentStatus = result.status;
+  console.log("Current Status: ", currentStatus);
 
-  while (currentStatus !== "successed" || currentStatus !== "failed") {
+  while (currentStatus !== "successed" && currentStatus !== "failed") {
+    await new Promise(resolve => setTimeout(resolve, 10000));
     const result = await tryOnResult();
+    console.log("Current Status: ", result.status);
     currentStatus = result.status;
   }
 
   if (currentStatus === "successed") {
+    console.log("Success Try On Status: ", result.data.tryon_img_url)
     return {
       success: true,
       message: result.data.tryon_img_url,
     };
   } else if (currentStatus === "failed") {
+    console.log("Failed Try On Status: ", result.data.err_msg)
     return {
       success: false,
       error: "API Error: " + result.data.err_msg,

@@ -120,28 +120,42 @@
     </ImageUpload>
   {/if}
   {#if page === 3}
-    <ImageGen support="Please wait a few moments..." 
     {#if form?.success}
-      imageUrl={form?.message}
-    {/if}
-  >
-      <svelte:fragment slot="label">
-        <p>
-          Virtual <br /><span class={`highlight orange`}>Try On</span> Generation
-        </p>
-      </svelte:fragment>
-      <div slot="button" class="nav-button">
-        <Button
-          text="Back"
-          type="button"
-          style="secondary"
-          onClick={prevStep}
-        />
-        <Button text="Share" type="button" style="primary" />
-      </div>
-    </ImageGen>
-    {#if form?.success}
-      <p>Successful {form.message}</p>
+      <ImageGen support="Please wait a few moments..." imageUrl={form?.message}>
+        <svelte:fragment slot="label">
+          <p>
+            Virtual <br /><span class={`highlight orange`}>Try On</span> Generation
+          </p>
+        </svelte:fragment>
+        <div slot="button" class="nav-button">
+          <Button
+            text="Back"
+            type="button"
+            style="secondary"
+            onClick={prevStep}
+          />
+          <Button text="Share" type="button" style="primary" />
+        </div>
+      </ImageGen>
+    {:else if !form?.success}
+      <p>Failed: {form?.error}</p>
+    {:else}
+      <ImageGen support="Please wait a few moments...">
+        <svelte:fragment slot="label">
+          <p>
+            Virtual <br /><span class={`highlight orange`}>Try On</span> Generation
+          </p>
+        </svelte:fragment>
+        <div slot="button" class="nav-button">
+          <Button
+            text="Back"
+            type="button"
+            style="secondary"
+            onClick={prevStep}
+          />
+          <Button text="Share" type="button" style="primary" />
+        </div>
+      </ImageGen>
     {/if}
   {/if}
 </div>
